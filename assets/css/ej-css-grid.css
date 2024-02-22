@@ -9,6 +9,15 @@
     text-align: center;
 }
 
+*{
+    height: 100%;
+    margin: 0px;
+}
+
+body{
+    min-height: 100%;
+}
+
 /*Estilos Grid Items*/
 header{
     grid-area: header;
@@ -33,6 +42,37 @@ aside{
 footer{
     grid-area: footer;
     background-color: red;
+}
+
+/*Resolución tabletas*/ 
+@media screen and (min-width:768px) { 
+    .container-grid{ 
+        grid-template-columns: 200px auto; 
+        grid-template-rows: 100px 50px auto 50px; 
+        grid-template-areas: 
+        "header header" 
+        "navbar navbar" 
+        "sidebar main" 
+        "footer footer";
+     } 
+}
+
+/*Resolución resoluciones medias*/ 
+@media screen and (min-width:1024px) { 
+    #container-grid{ 
+        grid-template: 
+        "header header header" 100px
+        "navbar main sidebar" auto 
+        "footer footer footer" 50px / 
+        200px auto 100px; }
+}
+
+/*Resolución resoluciones macro*/ 
+@media screen and (min-width:1308px) { 
+    .container-grid{ 
+        max-width: 1200px; 
+        margin: 0 auto; 
+    } 
 }
 
 @media screen and (min-width:768px) {
